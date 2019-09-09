@@ -1,0 +1,14 @@
+<section class="container">
+    <table *ngIf="usuarios | async as users" class="table">
+        <tr>
+            <th> ID </th>
+            <th> Nome </th>
+            <th> E-mail </th>
+        </tr>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.nome}}</td>
+            <td>{{u.email}}</td> 
+        </tr>
+    </table>
+</section>

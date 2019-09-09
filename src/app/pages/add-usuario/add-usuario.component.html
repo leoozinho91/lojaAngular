@@ -1,0 +1,32 @@
+<section class="container">
+    <form #fc=ngForm (ngSubmit) = "onsubmit(fc)">
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="usuario.nome" name="nome" required>
+            <small class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for=""></label>
+            <input type="email" class="form-control" placeholder="E-mail" [(ngModel)]="usuario.email" name="email" required>
+            <small class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for=""></label>
+            <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="usuario.pws" name="pws" #pws="ngModel" minlength="6" required>
+            <small class="form-text text-danger font-weight-bold" *ngIf="pws.invalid && pws.dirty">Senha muito curta</small>
+        </div>
+        <div class="form-group">
+            <label for=""></label>
+            <input type="password" class="form-control" placeholder="Confirmar senha" #conf="ngModel" name="conf" (ngModel)="conf" required>
+            <small class="form-text text-danger font-weight-bold" *ngIf="pws.value != conf.value">Senhas diferentes</small>
+        </div>
+
+        <app-endereco [endereco]=endereco></app-endereco>
+     
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary" [disabled]="fc.invalid || pws.value != conf.value">Salvar</button>
+            <button type="reset" class="btn btn-primary ml-2" routerLink="/">Cancelar</button>
+        </div>
+    </form>
+</section>
+<app-list-usuario></app-list-usuario>

@@ -1,0 +1,28 @@
+<section class="container mt-2">
+    <!-- <table *ngIf="produtos | async as prods" class="table">
+        <tr>
+            <th> ID </th>
+            <th> Nome </th>
+            <th> E-mail </th>
+        </tr>
+        <tr *ngFor="let p of prods">
+            <td>{{p.id}}</td>
+            <td>{{p.nome}}</td>
+            <td>{{p.descricao}}</td> 
+            <td>{{p.quant}}</td> 
+            <td>{{p.valor}}</td> 
+        </tr>
+    </table> -->
+    <div class="row" *ngIf="produtos | async as prods">
+        <div class="card col-3 m-1 p-0" *ngFor="let p of prods">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{p.nome}}</h5>
+                <p class="card-text">{{p.descricao}}</p>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-danger btn-block">{{p.valor | currency:'BRL'}}</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label for=""></label>
+    <input type="text" class="form-control" placeholder="CEP" [(ngModel)]="cep" name="endereco.cep" required minlength="7" maxlength="9" #c="ngModel" (keyup)="buscaCEP($event)">
+    <small class="form-text text-danger" *ngIf="c.invalid">CEP Invalido!</small>
+</div>
+
+<div class="form-group">
+    <label for=""></label>
+    <input type="text" class="form-control" placeholder="Endereço" [(ngModel)]="endereco.logradouro" name="logradouro" required>
+    <small class="form-text text-muted"></small>
+</div>
+
+<div class="form-group">
+    <label for=""></label>
+    <input type="text" class="form-control" placeholder="Bairro" [(ngModel)]="endereco.bairro" name="bairro" required>
+    <small class="form-text text-muted"></small>
+</div>
+
+<div class="form-group">
+    <label for=""></label>
+    <input type="text" class="form-control" placeholder="Cidade" [(ngModel)]="endereco.localidade" name="localidade" required>
+    <small class="form-text text-muted"></small>
+</div>
+
+<div class="form-group">
+    <label for=""></label>
+    <input type="text" class="form-control" placeholder="Estado" [(ngModel)]="endereco.uf" name="uf" required>
+    <small class="form-text text-muted"></small>
+</div>

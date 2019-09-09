@@ -1,0 +1,38 @@
+<section class="container">
+    <form #fc=ngForm (ngSubmit)="onsubmit(fc)">
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="produto.nome" name="nome" required>
+            <small class="form-text text-muted"></small>
+        </div>
+
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" class="form-control" placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao" required>
+            <small class="form-text text-muted"></small>
+        </div>
+
+        <div class="form-group">
+            <label for=""></label>
+            <input type="number" class="form-control" placeholder="Quantidade" [(ngModel)]="produto.quant" name="quant" min="0" step="1" required>
+            <small class="form-text text-muted"></small>
+        </div>
+
+        <div class="form-group">
+            <label for=""></label>
+            <input type="number" class="form-control" placeholder="Valor" [(ngModel)]="produto.valor" name="valor" min="0" step="0.01" required>
+            <small class="form-text text-muted"></small>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheckAtivo" [(ngModel)]="produto.ativo" name="ativo">
+            <label class="form-check-label" for="exampleCheckAtuvo" aria-checked="true">Ativo</label>
+        </div>
+
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary" [disabled]="fc.invalid">Salvar</button>
+            <button type="reset" class="btn btn-primary ml-2" routerLink="/">Cancelar</button>
+        </div>
+    </form>
+</section>
+<app-list-produto></app-list-produto>
