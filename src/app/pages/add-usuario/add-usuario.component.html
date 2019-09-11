@@ -21,7 +21,7 @@
             <small class="form-text text-danger font-weight-bold" *ngIf="pws.value != conf.value">Senhas diferentes</small>
         </div>
 
-        <app-endereco [endereco]=endereco></app-endereco>
+        <app-endereco [endereco]=usuario.endereco></app-endereco>
      
         <div class="form-group text-right">
             <button type="submit" class="btn btn-primary" [disabled]="fc.invalid || pws.value != conf.value">Salvar</button>

@@ -9,5 +9,5 @@ export class Endereco {
     ibge: string;
     gia: string;
 
-    erro:boolean = false;
+    erro: boolean = false;
 }

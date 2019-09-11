@@ -1,40 +1,22 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "nome": "Ana",
-      "email": "ana@email.com",
-      "pws": "111111"
-    },
-    {
-      "id": 2,
-      "nome": "Pedro",
-      "email": "pedro@email.com",
-      "pws": "222222"
-    },
-    {
-      "nome": "João Mello",
-      "email": "jm@email.com",
-      "pws": "1111111",
-      "id": 3
-    },
-    {
-      "nome": "Maria das Dores",
-      "email": "md@email.com",
-      "pws": "1111111",
-      "id": 4
-    },
-    {
-      "nome": "Carlos da Silva",
-      "email": "cs@email.com",
-      "pws": "111111",
+      "endereco": {
+        "erro": false,
+        "cep": "21011-130",
+        "logradouro": "Rua Ourique",
+        "bairro": "Penha Circular",
+        "localidade": "Rio de Janeiro",
+        "uf": "RJ",
+        "unidade": "",
+        "gia": "",
+        "ibge": "3304557",
+        "complemento": ""
+      },
+      "nome": "Leonardo",
+      "email": "leonardo@email.com",
+      "pws": "macke123",
       "id": 5
-    },
-    {
-      "nome": "Ana Maria",
-      "email": "anamaria@email.com",
-      "pws": "222222",
-      "id": 6
     }
   ],
   "produtos": [

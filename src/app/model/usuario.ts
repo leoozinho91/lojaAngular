@@ -1,9 +1,9 @@
 import { Endereco } from './endereco';
 
 export class Usuario {
-    uid:string;
+    uid: string;
     nome: string;
-    email:string;
+    email: string;
     pws: string;
-    endereco:Endereco = new Endereco
+    endereco: Endereco = new Endereco;
 }
