@@ -7,6 +7,7 @@ import { ListProdutoComponent } from './pages/list-produto/list-produto.componen
 const routes: Routes = [
   {path:"", component:ListProdutoComponent},
   {path:"addUsuario", component:AddUsuarioComponent},
+  {path:"addUsuario/:id", component:AddUsuarioComponent},
   {path:"addProduto", component:AddProdutoComponent},
 ];
 

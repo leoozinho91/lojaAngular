@@ -5,8 +5,6 @@
 export const environment = {
   production: false,
   serverAPI:"http://localhost:3000/",
-  serverViaCEP:"viacep.com.br/ws/cep/json/",
-  
   firebaseConfig: {
     apiKey: "AIzaSyB4ovfY22-rQlxhneeMxH6pLOuLc2Sh_ak",
     authDomain: "lojaangular-db.firebaseapp.com",
@@ -16,6 +14,7 @@ export const environment = {
     messagingSenderId: "840059874221",
     appId: "1:840059874221:web:ef3d68a39faf5adec08f24"
   }
+
 };
 
 /*
