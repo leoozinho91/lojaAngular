@@ -44,7 +44,12 @@ export class UsuarioService {
   get(key) {
     return this.dbfire.object<Usuario>("usuarios/" + key).valueChanges()
   }
+
   update(usuario: Usuario, key) {
     return this.dbfire.object<Usuario>("usuarios/" + key).update(usuario);
+  }
+
+  remove(key) {
+    return this.dbfire.object("usuarios/" + key).remove()
   }
 }

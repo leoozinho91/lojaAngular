@@ -13,9 +13,7 @@ import Swal from 'sweetalert2';
 export class AddUsuarioComponent implements OnInit {
 
   protected usuario: Usuario = new Usuario;
-  private id: string = null;
-  // @Input() usuarios:Usuario[] = []
-
+  private id: string;
 
   constructor(
     public usuarioService: UsuarioService,
@@ -29,10 +27,12 @@ export class AddUsuarioComponent implements OnInit {
       this.usuarioService.get(this.id).subscribe(
         res => {
           this.usuario = res;
-
+        },
+        err=>{
+           this.id = null
         }
       );
-    }
+    } 
   }
 
   onsubmit(form) {
@@ -48,14 +48,14 @@ export class AddUsuarioComponent implements OnInit {
             Swal.fire("Atualizado!")
           },
           err => {
-           // console.log(err);
+            //console.log(err);
             Swal.fire({
               type: 'error',
               title: 'Oops...',
-              text: 'Erro ao atualizar o usuario!\nVerifique os dados!',
+              text: 'Erro ao autalizar o usuario!\nVerifique os dados!',
             })
           }
-        ) 
+        )
       } else {
         this.usuarioService.save(this.usuario).then(
           res => {
