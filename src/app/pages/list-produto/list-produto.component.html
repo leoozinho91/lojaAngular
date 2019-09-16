@@ -21,12 +21,18 @@
                 <p class="card-text">{{p.descricao}}</p>
             </div>
             <div class="card-footer bg-transparent">
-                <a href="#" class="btn btn-danger btn-block">{{p.valor | currency:'BRL'}}</a>
+                <a href="#" class="btn btn-dark btn-block">{{p.valor | currency:'BRL'}}</a><br>
                 <tr *ngFor="let u of prods">
-                    <td (click) = "editar(p)">/</td>
-                    <td (click) = "apagar(p)">X</td>
+                    <td id="card" class="btn btn-dark" (click) = "editar(p)">Editar</td>
+                    <td id="card" class="btn btn-dark  btn-block" (click) = "apagar(p)">Excluir</td>
                 </tr>
             </div>
         </div>
     </div>
 </section>
+<style>
+    #card{
+        display: inline;
+        margin-inline-start: 35px;
+    }
+</style>
