@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Usuario } from 'src/app/model/usuario';
+import { Usuario } from '../../model/usuario';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListUsuarioComponent implements OnInit {
 
-  protected usuarios:any;
+  protected usuarios: any;
 
   constructor(
     public usuarioService: UsuarioService,
@@ -21,14 +21,11 @@ export class ListUsuarioComponent implements OnInit {
     this.usuarios = this.usuarioService.getAll();
   }
 
-  editar(usuario){
-    this.ngOnInit()
-    this.router.navigate(['addUsuario',usuario.key])
+  editar(usuario) {
+    this.ngOnInit
+    this.router.navigate(['addUsuario', usuario.key])
   }
-
-  apagar(usuario){
-    if (confirm("Apagar o Usuario?"))
-      this.usuarioService.remove(usuario.key)
+  apagar(usuario:Usuario) {
+    console.log(usuario);
   }
-
 }

@@ -13,13 +13,12 @@ import { ListProdutoComponent } from './pages/list-produto/list-produto.componen
 import { PageHeaderComponent } from './pages/page-header/page-header.component';
 import { PageFooterComponent } from './pages/page-footer/page-footer.component';
 import { PageNavComponent } from './pages/page-nav/page-nav.component';
-import { EnderecoComponent } from './pages/add-endereco/endereco.component'
+import { EnderecoComponent } from './pages/add-endereco/endereco.component';
 
-//Firebase
+//firebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database'
-
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import {AngularFireDatabaseModule} from '@angular/fire/database'
     SweetAlert2Module.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

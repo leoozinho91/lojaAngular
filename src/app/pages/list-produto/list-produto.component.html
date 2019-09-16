@@ -22,6 +22,10 @@
             </div>
             <div class="card-footer bg-transparent">
                 <a href="#" class="btn btn-danger btn-block">{{p.valor | currency:'BRL'}}</a>
+                <tr *ngFor="let u of prods">
+                    <td (click) = "editar(p)">/</td>
+                    <td (click) = "apagar(p)">X</td>
+                </tr>
             </div>
         </div>
     </div>

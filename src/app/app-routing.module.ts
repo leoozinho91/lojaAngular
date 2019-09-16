@@ -9,6 +9,8 @@ const routes: Routes = [
   {path:"addUsuario", component:AddUsuarioComponent},
   {path:"addUsuario/:id", component:AddUsuarioComponent},
   {path:"addProduto", component:AddProdutoComponent},
+  {path:"addProduto/:id", component:AddProdutoComponent},
+  
 ];
 
 @NgModule({
