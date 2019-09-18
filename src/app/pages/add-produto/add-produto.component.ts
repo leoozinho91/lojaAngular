@@ -1,19 +1,19 @@
+
 import { Component, OnInit, Input } from '@angular/core';
-import { Produto } from '../../model/produto';
-import { ProdutoService } from '../../services/produto.service';
 import { Router, ActivatedRoute } from "@angular/router";
-//https://sweetalert2.github.io/#download - Dados do alerta com estilo
 import Swal from 'sweetalert2';
+import { Produto } from 'src/app/model/produto';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 @Component({
   selector: 'app-add-produto',
   templateUrl: './add-produto.component.html',
   styleUrls: ['./add-produto.component.css']
 })
-export class AddProdutoComponent implements OnInit {
 
-  protected produto: Produto = new Produto;
-  private id: string;
+export class AddProdutoComponent implements OnInit {
+protected produto: Produto = new Produto;
+private id: string;
 
   constructor(
     public produtoService: ProdutoService,

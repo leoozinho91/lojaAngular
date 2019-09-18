@@ -13,25 +13,26 @@ import Swal from 'sweetalert2';
 export class AddUsuarioComponent implements OnInit {
 
   protected usuario: Usuario = new Usuario;
-  // @Input() usuarios:Usuario[] = []
-  private id: string = null;
+  private id: string;
 
   constructor(
     public usuarioService: UsuarioService,
     protected router: Router,
-    protected activeRouter: ActivatedRoute
+    protected activedRouter: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.id = this.activeRouter.snapshot.paramMap.get("id");
+    this.id = this.activedRouter.snapshot.paramMap.get("id");
     if (this.id) {
       this.usuarioService.get(this.id).subscribe(
         res => {
           this.usuario = res;
+        },
+        err=>{
+           this.id = null
         }
-
       );
-    }
+    } 
   }
 
   onsubmit(form) {
@@ -47,18 +48,18 @@ export class AddUsuarioComponent implements OnInit {
             Swal.fire("Atualizado!")
           },
           err => {
-            console.log(err);
+            //console.log(err);
             Swal.fire({
               type: 'error',
               title: 'Oops...',
-              text: 'Erro ao atualizar o usuario!\nVerifique os dados!',
+              text: 'Erro ao autalizar o usuario!\nVerifique os dados!',
             })
           }
         )
       } else {
         this.usuarioService.save(this.usuario).then(
           res => {
-            //console.log(res);
+            console.log(res);
             this.usuario = new Usuario;
             form.reset();
             this.router.navigate(["/"]);
@@ -74,14 +75,14 @@ export class AddUsuarioComponent implements OnInit {
           }
         )
       }
-      } catch (e) {
-        Swal.fire({
-          type: 'warning',
-          title: 'Oops...',
-          text: 'Algo deu errado ao acessar a base de dados.',
-          footer: '<a href="/">Ligue para nosso suporte ?</a>'
-        })
-      }
+    } catch (e) {
+      Swal.fire({
+        type: 'warning',
+        title: 'Oops...',
+        text: 'Algo deu errado ao acessar a base de dados.',
+        footer: '<a href="/">Ligue para nosso suporte ?</a>'
+      })
     }
+  }
 
 }

@@ -13,12 +13,15 @@ import { ListProdutoComponent } from './pages/list-produto/list-produto.componen
 import { PageHeaderComponent } from './pages/page-header/page-header.component';
 import { PageFooterComponent } from './pages/page-footer/page-footer.component';
 import { PageNavComponent } from './pages/page-nav/page-nav.component';
-import { EnderecoComponent } from './pages/add-endereco/endereco.component';
+import { EnderecoComponent } from './pages/add-endereco/endereco.component'
 
-//firebase
+//Firebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import {AngularFireDatabaseModule} from '@angular/fire/database'
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { PerfilProdutoComponent } from './pages/perfil-produto/perfil-produto.component';
+import { CardsProdutosComponent } from './pages/cards-produtos/cards-produtos.component'
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import {AngularFireDatabaseModule} from '@angular/fire/database'
     PageHeaderComponent,
     PageFooterComponent,
     PageNavComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    PerfilProdutoComponent,
+    CardsProdutosComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database'
     SweetAlert2Module.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

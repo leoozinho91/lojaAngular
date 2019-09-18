@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { Usuario } from '../model/usuario';
 import { environment } from '../../environments/environment'
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,9 +25,9 @@ export class UsuarioService {
 
   save(usuario: Usuario) {
     //this.usuarios.push(usuario);
-    // return this.http.post(this.db + "usuarios", usuario);
+    //return this.http.post(this.db + "usuarios", usuario);
+    //return this.dbfire.object("usuarios").set(usuario);
     return this.dbfire.list("usuarios").push(usuario);
-
   }
 
   getAll() {
@@ -45,8 +44,12 @@ export class UsuarioService {
   get(key) {
     return this.dbfire.object<Usuario>("usuarios/" + key).valueChanges()
   }
+
   update(usuario: Usuario, key) {
     return this.dbfire.object<Usuario>("usuarios/" + key).update(usuario);
   }
 
+  remove(key) {
+    return this.dbfire.object("usuarios/" + key).remove()
+  }
 }

@@ -9,8 +9,8 @@
             <th> Bairro </th>
             <th> Cidade </th>
             <th> UF </th>
-            <th>/</th>
-            <th>X</th>
+            <th> <i class="fa fa-edit"></i> </th>
+            <th> <i class="fa fa-trash"></i> </th>
         </tr>
         <tr *ngFor="let u of users">
             <td>{{u.key}}</td>
@@ -20,9 +20,9 @@
             <td>{{u.endereco.logradouro}}</td> 
             <td>{{u.endereco.bairro}}</td> 
             <td>{{u.endereco.localidade}}</td> 
-            <td>{{u.endereco.uf}}</td>
-            <td (click) = "editar(u)">/</td>
-            <td (click) = "apagar(u)">X</td>
+            <td>{{u.endereco.uf}}</td> 
+            <td (click) = "editar(u)" style="cursor: pointer"><i class="fa fa-edit"></i></td> 
+            <td (click) = "apagar(u)" style="cursor: pointer"><i class="fa fa-trash"></i></td> 
         </tr>
     </table>
 </section>

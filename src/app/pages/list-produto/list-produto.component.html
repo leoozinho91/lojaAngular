@@ -1,38 +1,22 @@
 <section class="container mt-2">
-    <!-- <table *ngIf="produtos | async as prods" class="table">
+    <table *ngIf="produtos | async as prods" class="table">
         <tr>
             <th> ID </th>
             <th> Nome </th>
-            <th> E-mail </th>
+            <th> Descricao </th>
+            <th> Quant. </th>
+            <th> valor </th>
+            <th> <i class="fa fa-edit"></i> </th>
+            <th> <i class="fa fa-trash"></i> </th>
         </tr>
         <tr *ngFor="let p of prods">
-            <td>{{p.id}}</td>
+            <td>{{p.key}}</td>
             <td>{{p.nome}}</td>
-            <td>{{p.descricao}}</td> 
-            <td>{{p.quant}}</td> 
-            <td>{{p.valor}}</td> 
+            <td>{{p.descricao}}</td>
+            <td>{{p.quant}}</td>
+            <td>{{p.valor | currency:'BRL'}}</td>
+            <td (click)="editar(p)" style="cursor: pointer"><i class="fa fa-edit"></i></td>
+            <td (click)="apagar(p)" style="cursor: pointer"><i class="fa fa-trash"></i></td>
         </tr>
-    </table> -->
-    <div class="row" *ngIf="produtos | async as prods">
-        <div class="card col-3 m-1 p-0" *ngFor="let p of prods">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-                <h5 class="card-title">{{p.nome}}</h5>
-                <p class="card-text">{{p.descricao}}</p>
-            </div>
-            <div class="card-footer bg-transparent">
-                <a href="#" class="btn btn-dark btn-block">{{p.valor | currency:'BRL'}}</a><br>
-                <tr *ngFor="let u of prods">
-                    <td id="card" class="btn btn-dark" (click) = "editar(p)">Editar</td>
-                    <td id="card" class="btn btn-dark  btn-block" (click) = "apagar(p)">Excluir</td>
-                </tr>
-            </div>
-        </div>
-    </div>
+    </table>
 </section>
-<style>
-    #card{
-        display: inline;
-        margin-inline-start: 35px;
-    }
-</style>

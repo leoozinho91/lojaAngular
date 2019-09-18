@@ -1,0 +1,14 @@
+<section class="container mt-2">
+    <div class="row" *ngIf="produtos | async as prods">
+        <div class="card col-12 col-md-3 m-1 p-0" *ngFor="let p of prods" >
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body" routerLink="perfilProduto/{{p.key}}">
+                <h5 class="card-title">{{p.nome}}</h5>
+                <p class="card-text">{{p.descricao}}</p>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-danger btn-block">{{p.valor | currency:'BRL'}}</a>
+            </div>
+        </div>
+    </div>
+</section>
